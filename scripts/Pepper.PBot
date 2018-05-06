@@ -42,7 +42,8 @@ function startFarming() {
 		&& gobCoords.y <= bigY && gobCoords.y >= smallY) {
 			if(PBot.getGobName(allGobs[i]) == "gfx/terobjs/plants/pepper")
 				PBot.sysMsg(PBot.getGobName(allGobs[i]), 255, 102, 0);
-				carrotGobs.push(allGobs[i]);
+				carrotGobs.push(allGobs[i])
+				PBot.sleep(200);;
 			}
 	}
 
