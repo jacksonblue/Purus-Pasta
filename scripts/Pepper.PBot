@@ -19,13 +19,13 @@ print("Hello World!");
 
 // Create a window with some buttons
 // scriptID is a variable that exists by default on all scripts started, used to uniquely identify the script. Used for example when making new windows
-var PBotWindow = PBot.PBotWindow("Carrot Farmer", 50, 150, scriptID);
+var PBotWindow = PBot.PBotWindow("Pepper Farmer", 50, 150, scriptID);
 PBotWindow.addButton("selectArea", "Select Area", 25, 26, 5)
 PBotWindow.addButton("startBtn", "Start", 25, 49, 35);
 
 // Farming loop
 function startFarming() {
-	PBot.sysMsg("Starting to farm carrots!", 255, 102, 0);
+	PBot.sysMsg("Starting to farm pepper!", 255, 102, 0);
 
 	// List of gobs inside the area selected
 	var bigX = Math.max(a.x, b.x);
@@ -40,7 +40,7 @@ function startFarming() {
 		var gobCoords = PBot.getCoords(allGobs[i]);
 		if(gobCoords.x <= bigX && gobCoords.x >= smallX
 		&& gobCoords.y <= bigY && gobCoords.y >= smallY) {
-			if(PBot.getGobName(allGobs[i]) == "gfx/terobjs/plants/carrot" && PBot.getCropStage(allGobs[i]) == 4)
+			if(PBot.getGobName(allGobs[i]) == "gfx/terobjs/plants/pepper")
 				carrotGobs.push(allGobs[i]);
 			}
 	}
@@ -143,7 +143,7 @@ function startBtn() {
 	// Close the current window
 	PBot.closeWindow(PBotWindow);
 	// New window with a stop button
-	PBotWindow = PBot.PBotWindow("Carrot Farmer", 50, 125, scriptID);
+	PBotWindow = PBot.PBotWindow("Pepper Farmer", 50, 125, scriptID);
 	PBotWindow.addButton("stopBtn", "Stop", 50, 40, 15);
 
 	startFarming();
